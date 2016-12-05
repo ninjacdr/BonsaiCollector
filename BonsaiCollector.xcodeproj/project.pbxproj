@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		827DD1DA1DF20FAC00DE81F9 /* bonsai1.png in Resources */ = {isa = PBXBuildFile; fileRef = 827DD1D91DF20FAC00DE81F9 /* bonsai1.png */; };
+		827DD1DC1DF21DC000DE81F9 /* BonsaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DD1DB1DF21DC000DE81F9 /* BonsaiViewController.swift */; };
 		82F97F7E1DEFBA8400D38C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F97F7D1DEFBA8400D38C9B /* AppDelegate.swift */; };
 		82F97F801DEFBA8400D38C9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F97F7F1DEFBA8400D38C9B /* ViewController.swift */; };
 		82F97F831DEFBA8400D38C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F97F811DEFBA8400D38C9B /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		827DD1D91DF20FAC00DE81F9 /* bonsai1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonsai1.png; sourceTree = "<group>"; };
+		827DD1DB1DF21DC000DE81F9 /* BonsaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonsaiViewController.swift; sourceTree = "<group>"; };
 		82F97F7A1DEFBA8400D38C9B /* BonsaiCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonsaiCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F97F7D1DEFBA8400D38C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F97F7F1DEFBA8400D38C9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		82F97F7C1DEFBA8400D38C9B /* BonsaiCollector */ = {
 			isa = PBXGroup;
 			children = (
+				827DD1D91DF20FAC00DE81F9 /* bonsai1.png */,
 				82F97F7D1DEFBA8400D38C9B /* AppDelegate.swift */,
 				82F97F7F1DEFBA8400D38C9B /* ViewController.swift */,
+				827DD1DB1DF21DC000DE81F9 /* BonsaiViewController.swift */,
 				82F97F811DEFBA8400D38C9B /* Main.storyboard */,
 				82F97F871DEFBA8400D38C9B /* Assets.xcassets */,
 				82F97F891DEFBA8400D38C9B /* LaunchScreen.storyboard */,
@@ -129,6 +135,7 @@
 				82F97F8B1DEFBA8400D38C9B /* LaunchScreen.storyboard in Resources */,
 				82F97F881DEFBA8400D38C9B /* Assets.xcassets in Resources */,
 				82F97F831DEFBA8400D38C9B /* Main.storyboard in Resources */,
+				827DD1DA1DF20FAC00DE81F9 /* bonsai1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827DD1DC1DF21DC000DE81F9 /* BonsaiViewController.swift in Sources */,
 				82F97F801DEFBA8400D38C9B /* ViewController.swift in Sources */,
 				82F97F861DEFBA8400D38C9B /* BonsaiCollector.xcdatamodeld in Sources */,
 				82F97F7E1DEFBA8400D38C9B /* AppDelegate.swift in Sources */,
@@ -303,6 +311,7 @@
 				82F97F911DEFBA8400D38C9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
