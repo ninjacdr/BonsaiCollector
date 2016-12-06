@@ -10,16 +10,28 @@ import UIKit
 
 class BonsaiViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var addUpdateButton: UIButton!
     @IBOutlet weak var bonsaiImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
+    var bonsai : Bonsai? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-
+        
+        if bonsai != nil {
+            bonsaiImageView.image = UIImage(data: bonsai!.image as! Data)
+            titleTextField.text = bonsai!.title
+            
+            addUpdateButton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,16 +54,22 @@ class BonsaiViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func cameraTapped(_ sender: Any) {
         
-        
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func addTapped(_ sender: Any) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let bonsai = Bonsai(context: context)
-        bonsai.title = titleTextField.text
-        bonsai.image = UIImagePNGRepresentation(bonsaiImageView.image!) as NSData?
+        if bonsai != nil {
+            bonsai!.title = titleTextField.text
+            bonsai!.image = UIImagePNGRepresentation(bonsaiImageView.image!) as NSData?
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let bonsai = Bonsai(context: context)
+            bonsai.title = titleTextField.text
+            bonsai.image = UIImagePNGRepresentation(bonsaiImageView.image!) as NSData?
+        }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -59,5 +77,14 @@ class BonsaiViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    @IBAction func deleteTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(bonsai!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+    }
 }
 

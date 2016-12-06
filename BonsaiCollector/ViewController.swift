@@ -44,5 +44,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.imageView?.image = UIImage(data: bonsai.image as! Data)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bonsai = bonsais[indexPath.row]
+        performSegue(withIdentifier: "bonsaiSegue", sender: bonsai)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! BonsaiViewController
+        nextVC.bonsai = sender as? Bonsai
+    }
 }
 
